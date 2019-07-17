@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>erTWZipcode in Materialize CSS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Materialize CSS</h1>
+    <form class="form" id="myForm" action="">
+      <div class="row">
+        <div class="input-field col s4">
+          <select name="county"></select>
+          <label>縣市</label>
+        </div>
+        <div class="input-field col s4">
+          <select name="district"></select>
+          <label>鄉鎮市區</label>
+        </div>
+        <div class="input-field col s4">
+          <input class="validate" id="zipcode" name="zipcode" disabled type="text" value=" ">
+          <label for="zipcode">郵遞區號</label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script src="./js/er.twzipcode.data.js"></script>
+  <script src="./js/er.twzipcode.min.js"></script>
+  <script>
+    erTWZipcode({
+      defaultCountyText: "請選擇",
+      defaultDistrictText: "請選擇"
+    });
+    var distEl = document.querySelector('#myForm select[name=district]');
+    document.querySelector('#myForm select[name=county]')
+      .addEventListener("change", function (evt) {
+        //refresh district element
+        M.FormSelect.init(distEl);
+      });
+    //first time init all select elements in #myForm
+    M.FormSelect.init(document.querySelectorAll('#myForm select'));
+  </script>
+</body>
+</head>
+
+</html>

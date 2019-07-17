@@ -8,13 +8,11 @@ HTML 表單用簡易版台灣縣市地區與郵遞區號選擇器。
 - 只提供給表單元件 `<select>` 與 `<input>` 使用。
 - 因為是單純表單元件，表單相關的輸出不做處理。
 
-## 如何使用？
+#### updated at 0717,2019
 
-```html
-<head>
-    <script src="/js/er.twzipcode.min.js"></script>
-</head>
-```
+- 新增郵遞區號爬蟲器(use python with jupyter notebook)
+- 將郵遞區號資料分離到 er.twzipcode.data.js 內
+- 新增 .html 範例檔
 
 #### 欄位說明
 ```jsvascript
@@ -31,7 +29,7 @@ erTWZipcode(
 <select name="district" zipcode-align="left or right" required=""></select>
 ```
 
-## Examples
+## 如何使用？
 
 ### Bootstrap 4
 
@@ -39,6 +37,8 @@ erTWZipcode(
 不顯示郵遞區號 input text
 
 ```html
+<body>
+<!-- -省略 -->
 <div class="form-group">
     <label class="col-form-label" for="twzipcode">寄送地址（必填）</label>
     <div class="row pl-3 pr-3" id="twzipcode">
@@ -49,9 +49,12 @@ erTWZipcode(
     </div>
 </div>
 <!-- -省略 -->
+<script src="/js/er.twzipcode.data.js"></script>
+<script src="/js/er.twzipcode.min.js"></script>
 <script>
     erTWZipcode();
 </script>
+</body>
 ```
 
 ### Materialize CSS

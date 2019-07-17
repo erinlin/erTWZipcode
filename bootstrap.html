@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>erTWZipcode in bootstrap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Bootstrap 4+</h1>
+    <div class="form-group">
+      <label class="col-form-label" for="twzipcode">寄送地址（必填）</label>
+      <div class="row pl-3 pr-3" id="twzipcode">
+        <select class="col-md-2 form-control" name="county" aria-describedby="form-county" required=""></select>
+        <select class="col-md-3 form-control" name="district" aria-describedby="form-district" zipcode-align="left"
+          required=""></select>
+        <input class="col-md-7 form-control" id="address" type="text" name="address"
+          aria-describedby="form-address-input" required="" placeholder="路, 巷, 門牌, 樓層">
+        <input class="d-none" name="zipcode">
+      </div>
+    </div>
+  </div>
+  <script src="./js/er.twzipcode.data.js"></script>
+  <script src="./js/er.twzipcode.min.js"></script>
+  <script type="text/javascript">
+    erTWZipcode();
+  </script>
+</body>
+</head>
+
+</html>
